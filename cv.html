@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ryohei Mori</title>
+
+  <style>
+
+/* ---------- CV PAGE ---------- */
+
+.cv-page {
+
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding: 120px 24px 180px;
+
+}
+
+.cv-name {
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.04em;
+
+  margin-bottom: 90px;
+
+}
+
+.cv-label {
+
+  font-size: 15px;
+
+  opacity: 0.45;
+
+  margin-left: 12px;
+
+}
+
+.cv-section {
+
+  margin-bottom: 70px;
+
+}
+
+.cv-section h2 {
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.45;
+
+  margin-bottom: 22px;
+
+  text-transform: uppercase;
+
+}
+
+.cv-section p {
+
+  font-size: 13px;
+
+  line-height: 2;
+
+  margin: 0;
+
+}
+
+@media (max-width: 768px) {
+
+  .cv-page {
+
+    padding: 100px 24px 120px;
+
+  }
+
+  .cv-name {
+
+    font-size: 24px;
+
+    margin-bottom: 70px;
+
+  }
+
+}
+
+    body {
+  background: #f8f8f6;
+  color: #111;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.section {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
+
+.section-title {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 60px;
+  letter-spacing: 0.08em;
+}
+
+/* テキスト全体を少し整列 */
+p {
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+/* 見出しを少し硬く */
+strong {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 14px;
+}
+
+/* JP/ENの切り替えを安定させる */
+.jp, .en {
+  display: block;
+}
+
+/* ENは少しだけ軽く */
+.en {
+  opacity: 0.9;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f8f8f6;
+      color: #111;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ---------- language switch ---------- */
+
+    .language-switch {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 300;
+
+      font-size: 11px;
+
+      opacity: 0.25;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .language-switch:hover {
+      opacity: 0.8;
+    }
+
+    .language-switch span {
+      cursor: pointer;
+    }
+
+    .en {
+      display: none;
+    }
+
+    /* ---------- top navigation ---------- */
+
+    nav {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      z-index: 100;
+      font-size: 12px;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 6px;
+      opacity: 0.55;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* ---------- floating menu ---------- */
+
+    .menu-button {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 200;
+
+      font-size: 11px;
+
+      opacity: 0;
+      pointer-events: none;
+
+      cursor: pointer;
+
+      transform: translateY(6px);
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    }
+
+    .menu-button.visible {
+      opacity: 0.4;
+      pointer-events: auto;
+      transform: translateY(0px);
+    }
+
+    .menu-button:hover {
+      opacity: 1;
+    }
+
+    .popup-menu {
+      position: fixed;
+      right: 22px;
+      bottom: 50px;
+
+      background: rgba(248,248,246,0.94);
+
+      padding: 14px 16px;
+
+      font-size: 11px;
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 0.4s ease;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .popup-menu.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popup-menu a {
+      display: block;
+      margin-bottom: 8px;
+      opacity: 0.65;
+      transition: opacity 0.3s ease;
+    }
+
+    .popup-menu a:last-child {
+      margin-bottom: 0;
+    }
+
+    .popup-menu a:hover {
+      opacity: 1;
+    }
+
+    /* ---------- hero ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-left: 24px;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ---------- year navigation ---------- */
+
+    .year-nav {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 180px;
+      font-size: 14px;
+    }
+
+    .year-nav a {
+      display: block;
+      margin-bottom: 18px;
+
+      opacity: 0.35;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .year-nav a:hover {
+      opacity: 1;
+    }
+
+    /* ---------- works ---------- */
+
+.work-image {
+  margin-bottom: 24px;
+}
+    .works {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 240px;
+    }
+
+    .year-section {
+      margin-bottom: 220px;
+    }
+
+    .year-title {
+      font-size: 18px;
+      margin-bottom: 80px;
+      opacity: 0.35;
+    }
+
+    .work {
+      margin-bottom: 180px;
+    }
+
+    .work-image {
+      overflow: hidden;
+    }
+
+    .work-image img {
+      transition: transform 8s ease;
+    }
+
+    .work:hover .work-image img {
+      transform: scale(1.015);
+    }
+
+    .work-info {
+      margin-top: 14px;
+      max-width: 640px;
+    }
+
+    .work-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .work-meta {
+      font-size: 11px;
+      opacity: 0.55;
+      margin-bottom: 18px;
+    }
+
+    .work-text {
+      font-size: 13px;
+      opacity: 0.85;
+     white-space: pre-line;
+ max-width: 720px;
+}
+
+/* ---------- image caption ---------- */
+
+.image-caption {
+
+  margin-top: 10px;
+  margin-bottom: 42px;
+
+  font-size: 11px;
+
+  opacity: 0.45;
+
+  line-height: 1.6;
+
+}
+/* ---------- horizontal gallery ---------- */
+
+.gallery-scroll {
+
+  display: flex;
+
+  gap: 28px;
+
+  overflow-x: auto;
+
+  align-items: center;
+
+  padding-bottom: 20px;
+
+  scroll-behavior: smooth;
+
+}
+
+.gallery-scroll::-webkit-scrollbar {
+
+  height: 4px;
+
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+
+  background: rgba(0,0,0,0.15);
+
+}
+
+.gallery-item {
+
+  width: 50%;
+
+  flex-shrink: 0;
+
+}
+
+.gallery-item img {
+
+  width: 100%;
+
+  display: block;
+
+}
+    /* ---------- section ---------- */
+
+    .section {
+      width: 92%;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-bottom: 180px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      opacity: 0.5;
+      margin-bottom: 50px;
+    }
+
+    .news-entry {
+      margin-bottom: 34px;
+    }
+
+    .news-date {
+      font-size: 11px;
+      opacity: 0.5;
+      margin-bottom: 4px;
+    }
+
+    .news-text {
+      font-size: 13px;
+    }
+
+    /* ---------- animation ---------- */
+
+    .float {
+      animation: drift 10s ease-in-out infinite;
+    }
+
+    @keyframes drift {
+
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(1.5px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+
+    }
+
+    /* ---------- mobile ---------- */
+
+    @media (max-width: 768px) {
+
+      nav {
+        top: 18px;
+        left: 18px;
+      }
+
+      .language-switch {
+        top: 18px;
+        right: 18px;
+      }
+
+      .hero {
+        padding-left: 18px;
+      }
+
+      .hero-title {
+        font-size: 22px;
+      }
+
+      .year-title {
+        margin-bottom: 50px;
+      }
+
+      .work {
+        margin-bottom: 110px;
+      }
+
+    }
+
+/* ---------- CV ITEM ---------- */
+
+.cv-item {
+
+  display: flex;
+
+  margin-bottom: 26px;
+
+}
+
+.cv-year {
+
+  width: 90px;
+
+  flex-shrink: 0;
+
+  opacity: 0.45;
+
+}
+
+.cv-detail {
+
+  flex: 1;
+
+}
+
+@media (max-width: 768px) {
+
+  .cv-item {
+
+    display: block;
+
+  }
+
+  .cv-year {
+
+    width: auto;
+
+    margin-bottom: 4px;
+
+  }
+
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- language switch -->
+
+  <div class="language-switch">
+
+    <span onclick="setLanguage('jp')">JP</span>
+    /
+    <span onclick="setLanguage('en')">EN</span>
+
+  </div>
+
+  <!-- top navigation -->
+
+  <nav>
+
+    <a href="#works">Works</a>
+    <a href="#news">News</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+  <!-- floating menu -->
+
+  <div class="menu-button" onclick="toggleMenu()">
+    Menu
+  </div>
+
+  <div class="popup-menu" id="popupMenu">
+
+    <a href="#works">Works</a>
+
+    <a href="#y2026">2026</a>
+    <a href="#y2025">2025</a>
+    <a href="#y2024">2024</a>
+
+    <a href="#news">News</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+
+  </div>
+
+  <!-- hero -->
+
+ <section class="cv-page" id="cv">
+
+  <h1 class="cv-name">
+
+    <span class="jp">森椋平</span>
+    <span class="en">Ryohei Mori</span>
+
+    <span class="cv-label">CV</span>
+
+  </h1>
+
+  <!-- Education -->
+
+  <div class="cv-section">
+
+    <h2>
+
+      <span class="jp">学歴</span>
+      <span class="en">Education</span>
+
+    </h2>
+
+    
+<div class="cv-item">
+
+  <div class="cv-year">
+    2025
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      多摩美術大学 美術学部 絵画学科油画専攻 卒業
+    </span>
+
+    <span class="en">
+      B.A. in Oil Painting, Tama Art University
+    </span>
+
+  </div>
+
+</div>
+  </div>
+
+  <!-- Solo Exhibitions -->
+
+  <div class="cv-section">
+
+    <h2>
+
+      <span class="jp">個展</span>
+      <span class="en">Solo Exhibitions</span>
+
+    </h2>
+
+   
+
+  </div>
+
+    <div class="cv-item">
+
+  <div class="cv-year">
+    2026
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「それは川だったか、用水路だったか」<br>
+      光灯｜東京
+    </span>
+
+    <span class="en">
+      "Was it a River, or an Irrigation Canal?"<br>
+      Kohtoh Gallery, Tokyo
+    </span>
+
+  </div>
+
+</div>
+
+ <div class="cv-item">
+
+  <div class="cv-year">
+    2025
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「わたしの髪は自由にゆれる、ごくごくと水を飲むように」<br>
+      横浜タイムマシーン研究所｜神奈川
+    </span>
+
+    <span class="en">
+      "My hair sways freely, just as I drink water in big gulps"<br>
+     Yokohama Time Machine Laboratory , Kanagawa
+    </span>
+
+  </div>
+
+</div>
+
+  </div>
+  <!-- Group Exhibitions -->
+
+  <div class="cv-section">
+
+    <h2>
+
+      <span class="jp">グループ展</span>
+      <span class="en">Group Exhibitions</span>
+
+    </h2>
+
+    <div class="cv-item">
+
+  <div class="cv-year">
+    2026
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「ノン　第二回in別府」<br>
+      別府市内｜大分
+    </span>
+
+    <span class="en">
+      "Non: Second Edition in Beppu"<br>
+      Beppu, Ooita
+    </span>
+
+  </div>
+
+</div>
+
+ <div class="cv-item">
+
+  <div class="cv-year">
+    2025
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「Ongoing Fes 2025」<br>
+      アートセンターオンゴーイング｜東京
+
+      <br><br>
+
+  「点滅」<br>
+      ハモニカ横丁吉祥寺｜東京
+
+       <br><br>
+
+  「アライブ！展」<br>
+      BankART Station｜神奈川
+
+      <br><br>
+
+  「2024年度多摩美術大学美術学部卒業制作展」<br>
+      多摩美術大学　八王子キャンパス｜東京
+
+    </span>
+
+    <span class="en">
+      "Ongoing Fes 2025"<br>
+      Art center Ongoing, Tokyo
+<br><br>
+ "TENNMETU"<br>
+      Harmonica Yokocho Kichijoji, Tokyo
+<br><br>
+       "Alive！"<br>
+      BankART　station, Kanagawa
+      <br><br>
+ "Tama Art University Graduation Exhibition 2024"<br>
+   Tama Art University, Tokyo   
+    </span>
+
+  </div>
+ 
+
+</div>
+
+  <div class="cv-item">
+
+  <div class="cv-year">
+    2024
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「Ongoing Fes 2024」<br>
+      アートセンターオンゴーイング｜東京
+    </span>
+
+    <span class="en">
+      "Ongoing Fes 2024"<br>
+       Art center Ongoing, Tokyo
+    </span>
+
+  </div>
+
+</div>
+
+ <div class="cv-item">
+
+  <div class="cv-year">
+    2023
+  </div>
+
+  <div class="cv-detail">
+
+    <span class="jp">
+      「では、お菓子だけいただきますわ」<br>
+      八王子城跡｜東京
+    </span>
+
+    <span class="en">
+      "Well then, I’ll just have the sweets."<br>
+       Hachioji Castle Ruins, Tokyo
+    </span>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+</section>
+
+
+
+
+ 
+
+  <!-- script -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("popupMenu");
+
+      menu.classList.toggle("active");
+
+    }
+
+    const menuButton = document.querySelector(".menu-button");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 120) {
+
+        menuButton.classList.add("visible");
+
+      } else {
+
+        menuButton.classList.remove("visible");
+
+      }
+
+    });
+
+    function setLanguage(lang) {
+
+      const jp = document.querySelectorAll('.jp');
+      const en = document.querySelectorAll('.en');
+
+      if (lang === 'jp') {
+
+        jp.forEach(el => el.style.display = 'inline');
+        en.forEach(el => el.style.display = 'none');
+
+      } else {
+
+        jp.forEach(el => el.style.display = 'none');
+        en.forEach(el => el.style.display = 'inline');
+
+      }
+
+    }
+
+    setLanguage('en');
+    const gallery = document.querySelector('.gallery-scroll');
+
+gallery.addEventListener('wheel', (e) => {
+
+  e.preventDefault();
+
+  gallery.scrollLeft += e.deltaY;
+
+});
+
+  </script>
+
+</body>
+
+</html>
