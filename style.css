@@ -162,15 +162,22 @@
 
     .year-nav {
       width: 92%;
-      max-width: 1100px;
+      max-width: 700px;
+      text-align: left;
       margin: 0 auto;
       padding-bottom: 180px;
       font-size: 14px;
-    }
+    display: flex;          /* ←追加 */
+
+  flex-direction: column; /* ←追加 */
+
+  gap: 18px;              /* ←marginじゃなくてgapに統一 */
+
+}
 
     .year-nav a {
       display: block;
-      margin-bottom: 18px;
+     
 
       opacity: 0.35;
 
@@ -188,7 +195,7 @@
 }
     .works {
       width: 92%;
-      max-width: 1100px;
+      max-width: 700px;
       margin: 0 auto;
       padding-bottom: 240px;
     }
@@ -276,7 +283,7 @@
 }
 
 .gallery-item {
-  flex: 0 0 65%;
+  flex: 0 0 50%;
   position: relative;
 }
 
@@ -402,7 +409,6 @@
   font-size: 32px;
   cursor: pointer;
 }
-
     /* ---------- animation ---------- */
 
     .float {
@@ -456,5 +462,7 @@
       }
 
     }
+
+  
 
   
