@@ -1,4 +1,4 @@
-
+ 
 
 
     function toggleMenu() {
@@ -56,7 +56,6 @@
   });
 
 });
-
 const images = document.querySelectorAll(".gallery-item img");
 
 const lightbox = document.getElementById("lightbox");
@@ -85,4 +84,5 @@ lightbox.addEventListener("click", () => {
   lightbox.classList.remove("active");
 
 });
+
 
