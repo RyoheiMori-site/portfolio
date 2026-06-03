@@ -61,6 +61,8 @@ const images = document.querySelectorAll(".gallery-item img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeLightbox = document.getElementById("close-lightbox");
+const lightboxCaption =
+document.getElementById("lightbox-caption");
 
 images.forEach(img => {
 
@@ -68,6 +70,12 @@ images.forEach(img => {
 
     lightbox.classList.add("active");
     lightboxImg.src = img.src;
+
+    const caption =
+      img.parentElement.querySelector(".image-caption");
+
+    lightboxCaption.innerHTML =
+      caption ? caption.innerHTML : "";
 
   });
 
