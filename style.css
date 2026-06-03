@@ -478,6 +478,17 @@
       .work {
         margin-bottom: 110px;
       }
+        .gallery-item {
+  flex: 0 0 85%;
+}
+
+.gallery-item.large-work {
+  flex: 0 0 95%;
+}
+
+.gallery-scroll {
+  gap: 16px;
+}
 
     }
 
