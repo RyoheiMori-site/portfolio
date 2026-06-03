@@ -409,6 +409,24 @@
   font-size: 32px;
   cursor: pointer;
 }
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#lightbox-caption {
+  margin-top: 14px;
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 11px;
+  line-height: 1.6;
+
+  text-align: center;
+
+  max-width: 800px;
+}
     /* ---------- animation ---------- */
 
     .float {
